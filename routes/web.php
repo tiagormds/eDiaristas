@@ -20,3 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Rotas para trabalhar com serviços
+Route::get('/servicos', [\App\Http\Controllers\ServicoController::class, 'index'])->name('servicos.index');
