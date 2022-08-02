@@ -17,4 +17,9 @@ class ServicoController extends Controller
     {
         return view('servicos.create');
     }
+
+    public function store(Request $request)
+    {
+
+    }
 }
