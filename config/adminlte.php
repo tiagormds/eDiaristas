@@ -276,7 +276,7 @@ return [
                 [
                     'text' => 'cadastrar Serviços',
                     'icon'    => 'fas fa-fw fa-file',
-                    'url'  => '#',
+                    'route'  => 'servicos.create',
                 ],
             ],
         ],
