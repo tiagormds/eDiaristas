@@ -9,136 +9,183 @@
 @section('content')
     <form action="{{ route('servicos.store') }}" method="post" enctype="multipart/form-data">
         @csrf
-        <h4>Identificação</h4>
-        <div class="row">
-            <div class="col">
-                <span>Nome</span>
-                <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" name="nome">
-            </div>
 
-            <div class="col">
-                <span>ícone</span>
-                <input type="text" class="form-control" placeholder="Ícone" aria-label="Ícone" name="icone">
-            </div>
+        <div class="card">
+            <div class="card-body">
+                <fieldset>
+                    <legend>Identificação</legend>
+                    <div class="row">
 
-            <div class="col">
-                <span>Posição na plataforma</span>
-                <input type="text" class="form-control" placeholder="Posição na plataforma"
-                       aria-label="Posição na plataforma" name="posicao_plataforma">
-            </div>
-        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="input" class="form-control" name="nome" id="nome" placeholder="Nome">
+                            </div>
+                        </div>
 
-        <br><br>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="icone">Ícone</label>
+                                <input type="input" class="form-control" name="icone" id="icone" placeholder="Ícone">
+                            </div>
+                        </div>
 
-        <h4>Globais</h4>
-        <div class="row">
-            <div class="col">
-                <span>Valor mínimo</span>
-                <input type="text" class="form-control" placeholder="Valor mínimo" aria-label="Valor mínimo"
-                       name="valor_minimo">
-            </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="posicao">Posição na Plataforma</label>
+                                <input type="input" class="form-control" name="posicao"
+                                       id="posicao" placeholder="Posição na Plataforma">
+                            </div>
+                        </div>
 
-            <div class="col">
-                <span>Quantidade mínimas de horas</span>
-                <input type="text" class="form-control" placeholder="Quantidade mínimas de horas"
-                       aria-label="Quantidade mínimas de horas" name="quantidade_minimas_horas">
-            </div>
-
-            <div class="col">
-                <span>Porcentagem de comissão</span>
-                <input type="text" class="form-control" placeholder="Porcentagem de comissão"
-                       aria-label="Porcentagem de comissão" name="porcentagem_comissão">
+                    </div>
+                </fieldset>
             </div>
         </div>
 
-        <br><br>
+        <div class="card">
+            <div class="card-body">
+                <fieldset>
+                    <legend>Globais</legend>
+                    <div class="row">
 
-        <h4>Cômodos</h4>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="valor_minimo">Valor Mínimo</label>
+                                <input type="input" class="form-control" name="valor_minimo" id="valor_minimo"
+                                       placeholder="Valor Mínimo">
+                            </div>
+                        </div>
 
-        <div class="row">
-            <div class="col">
-                <span>Valor por quarto</span>
-                <input type="text" class="form-control" placeholder="Valor por quarto" aria-label="Valor mínimo"
-                       name="Valor por quarto" data-dz-name="Valor_quarto">
-            </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="quantidade_horas">Quantidades Mínimas de Horas</label>
+                                <input type="input" class="form-control" name="quantidade_horas"
+                                       id="quantidade_horas" placeholder="Quantidades Mínimas de Horas">
+                            </div>
+                        </div>
 
-            <div class="col">
-                <span>Quantidade de horas por quartos</span>
-                <input type="text" class="form-control" placeholder="Quantidade de horas por quartos"
-                       aria-label="Quantidade de horas por quartos" name="Quantidade_horas_quartos">
-            </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="porcentagem">Porcentagem de comissão</label>
+                                <input type="input" class="form-control" name="porcentagem"
+                                       id="porcentagem" placeholder="Porcentagem de comissão">
+                            </div>
+                        </div>
 
-            <div class="col">
-                <span>Valor por sala</span>
-                <input type="text" class="form-control" placeholder="Valor por sala" aria-label="Valor por sala"
-                       name="valor_por_sala">
-            </div>
-
-            <div class="col">
-                <span>Quantidades de horas por sala</span>
-                <input type="text" class="form-control" placeholder="Quantidades de horas por sala"
-                       aria-label="Quantidades de horas por sala" name="quantidades_horas_sala">
-            </div>
-        </div>
-
-        <br>
-
-        <div class="row">
-            <div class="col">
-                <span>Valor por banheiro</span>
-                <input type="text" class="form-control" placeholder="Valor por banheiro" aria-label="Valor por banheiro"
-                       name="valor_banheiro">
-            </div>
-
-            <div class="col">
-                <span>Quantidades de horas por banheiro</span>
-                <input type="text" class="form-control" placeholder="Quantidades de horas por banheiro"
-                       aria-label="Quantidades de horas por banheiro" name="quantidades_horas_banheiro">
-            </div>
-
-            <div class="col">
-                <span>Valor por cozinha</span>
-                <input type="text" class="form-control" placeholder="Valor por cozinha" aria-label="Valor por cozinha"
-                       name="Valor_cozinha">
-            </div>
-
-            <div class="col">
-                <span>Quantidade de horas por cozinha</span>
-                <input type="text" class="form-control" placeholder="Quantidade de horas por cozinha"
-                       aria-label="Quantidade de horas por cozinha" name="quantidade_horas_cozinha">
+                    </div>
+                </fieldset>
             </div>
         </div>
 
-        <br>
+        <div class="card">
+            <div class="card-body">
+                <fieldset>
+                    <legend>Cômodos</legend>
+                    <div class="row">
 
-        <div class="row">
-            <div class="col">
-                <span>Valor por quintal</span>
-                <input type="text" class="form-control" placeholder="Valor por quintal" aria-label="Valor por quintal"
-                       name="valor_quintal">
-            </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="valor_quarto">Valor por quarto</label>
+                                <input type="input" class="form-control" name="valor_quarto" id="valor_quarto"
+                                       placeholder="Valor por quarto">
+                            </div>
+                        </div>
 
-            <div class="col">
-                <span>Quantidade de horas por quintal</span>
-                <input type="text" class="form-control" placeholder="Quantidade de horas por quintal"
-                       aria-label="Quantidade de horas por quintal" name="Quantidade_horas_quintal">
-            </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="horas_quarto">Quantidade de horas por quartos</label>
+                                <input type="input" class="form-control" name="horas_quarto"
+                                       id="horas_quarto" placeholder="Quantidade de horas por quartos">
+                            </div>
+                        </div>
 
-            <div class="col">
-                <span>Valor por outros tipos de cômodos</span>
-                <input type="text" class="form-control" placeholder="Valor por outros tipos de cômodos"
-                       aria-label="Valor por outros tipos de cômodos" name="Valor_outros_tipos_comodos">
-            </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="valor_sala">Valor por sala</label>
+                                <input type="input" class="form-control" name="valor_sala" id="valor_sala"
+                                       placeholder="Valor por sala">
+                            </div>
+                        </div>
 
-            <div class="col">
-                <span>Quantidade de horas por outros tipos de cômodos</span>
-                <input type="text" class="form-control" placeholder="Quantidade de horas por outros tipos de cômodos"
-                       aria-label="Quantidade de horas por outros tipos de cômodos"
-                       name="quantidade_horas_outros_tipos_comodos">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="horas_sala">Quantidades de horas por sala</label>
+                                <input type="input" class="form-control" name="horas_sala"
+                                       id="horas_sala" placeholder="Quantidades de horas por sala">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="valor_banheiro">Valor por Banheiro</label>
+                                <input type="input" class="form-control" name="valor_banheiro" id="valor_banheiro"
+                                       placeholder="Valor por Banheiro">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="horas_banheiro">Quantidades de Horas por Banheiro</label>
+                                <input type="input" class="form-control" name="horas_banheiro"
+                                       id="horas_banheiro" placeholder="Quantidades de Horas por Banheiro">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="valor_cozinha">Valor por Cozinha</label>
+                                <input type="input" class="form-control" name="valor_cozinha" id="valor_cozinha"
+                                       placeholder="Valor por cozinha">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="horas_cosinha">Quantidade de horas por cozinha</label>
+                                <input type="input" class="form-control" name="horas_cosinha"
+                                       id="horas_cosinha" placeholder="Quantidade de horas por cozinha">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="valor_quintal">Valor por Quintal</label>
+                                <input type="input" class="form-control" name="valor_quintal" id="valor_quintal"
+                                       placeholder="Valor por Quintal">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="horas_quintal">Quantidade de horas por quintal</label>
+                                <input type="input" class="form-control" name="horas_quintal"
+                                       id="horas_quintal" placeholder="Quantidade de horas por quintal">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="valor_outros">Valor por outros tipos de cômodos</label>
+                                <input type="input" class="form-control" name="valor_outros"
+                                       id="valor_outros" placeholder="Valor por outros tipos de cômodos">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="horas_outros">Quantidade de horas por outros tipos
+                                    de cômodos</label>
+                                <input type="input" class="form-control" name="horas_outros"
+                                       id="horas_outros"
+                                       placeholder="Quantidade de horas por outros tipos de cômodos">
+                            </div>
+                        </div>
+
+                    </div>
+                </fieldset>
             </div>
         </div>
-
-        <br>
 
         <button class="btn btn-primary">Salvar</button>
     </form>

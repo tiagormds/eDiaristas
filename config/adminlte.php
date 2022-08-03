@@ -265,7 +265,7 @@ return [
 //            'icon' => 'fas fa-fw fa-lock',
 //        ],
         [
-            'text'    => 'Cadastro de Serviços',
+            'text'    => 'Serviços',
             'icon'    => 'fas fa-fw fa-broom',
             'submenu' => [
                 [

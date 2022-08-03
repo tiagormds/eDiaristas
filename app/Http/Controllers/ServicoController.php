@@ -10,7 +10,7 @@ class ServicoController extends Controller
     public function index()
     {
         $servicos = Servico::paginate(4);
-       return view('servicos.index', compact('servicos'));
+        return view('servicos.index', compact('servicos'));
     }
 
     public function create()
@@ -20,6 +20,10 @@ class ServicoController extends Controller
 
     public function store(Request $request)
     {
+        $dados = $request->all();
 
+        Servico::create($dados);
+
+        return redirect()->route('servicos.index');
     }
 }
