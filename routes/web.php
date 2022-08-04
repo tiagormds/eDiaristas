@@ -25,3 +25,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/servicos', [\App\Http\Controllers\ServicoController::class, 'index'])->name('servicos.index');
 Route::get('/servicos/create', [\App\Http\Controllers\ServicoController::class, 'create'])->name('servicos.create');
 Route::post('/servicos', [\App\Http\Controllers\ServicoController::class, 'store'])->name('servicos.store');
+Route::get('/servicos/{servico}/edit', [\App\Http\Controllers\ServicoController::class, 'edit'])->name('servico.edit');
+Route::put('/servicos/{servico}/update', [\App\Http\Controllers\ServicoController::class, 'update'])->name('servico.update');

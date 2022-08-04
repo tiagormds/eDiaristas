@@ -26,4 +26,11 @@ class ServicoController extends Controller
 
         return redirect()->route('servicos.index');
     }
+
+    public function edit(int $id)
+    {
+        $servico = Servico::find($id);
+
+        return view('servicos.edit', compact('servico'));
+    }
 }
