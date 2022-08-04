@@ -21,7 +21,7 @@
                 <th scope="row">{{ $servico->id }}</th>
                 <td>{{ $servico->nome }}</td>
                 <td>
-                    <button class="btn btn-primary">teste</button>
+                    <a class="btn btn-primary" href="{{ route('servico.edit', $servico->id) }}">Atualizar dados do serviço</a>
                 </td>
             </tr>
         @empty

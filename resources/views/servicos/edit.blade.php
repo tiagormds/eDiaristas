@@ -9,6 +9,7 @@
 @section('content')
     <form action="{{ route('servico.update', $servico->id) }}" method="post" enctype="multipart/form-data">
         @csrf
+        @method('PUT')
 
         @include('servicos._form')
 

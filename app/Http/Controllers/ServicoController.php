@@ -33,4 +33,13 @@ class ServicoController extends Controller
 
         return view('servicos.edit', compact('servico'));
     }
+
+    public function update(int $id, Request $request)
+    {
+        $dados = $request->all();
+
+        $servico = Servico::findOrFail($id);
+        $servico->update($dados);
+        return redirect()->route('servicos.index');
+    }
 }
