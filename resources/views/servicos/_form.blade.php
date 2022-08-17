@@ -21,15 +21,15 @@
                         <select class="form-control" name="icone" id="icone">
                             <option value="" disabled selected>Selecione o ícone</option>
                             <option
-                                value="twf-cleaning-1" {{ old('icone', isset($servico) && $servico->icone) ==='twf-cleaning-1' ? 'selected' : ''  }}>
+                                value="twf-cleaning-1" {{ old('icone', isset($servico) && $servico->icone ==='twf-cleaning-1' ? 'selected' : '' )  }}>
                                 Ícone 1
                             </option>
                             <option
-                                value="twf-cleaning-2" {{ old('icone', isset($servico) && $servico->icone) ==='twf-cleaning-2' ? 'selected' : ''  }}>
+                                value="twf-cleaning-2" {{ old('icone', isset($servico) && $servico->icone ==='twf-cleaning-2' ? 'selected' : '') }}>
                                 Ícone 2
                             </option>
                             <option
-                                value="twf-cleaning-3" {{ old('icone', isset($servico) && $servico->icone) ==='twf-cleaning-3' ? 'selected' : ''  }}>
+                                value="twf-cleaning-3" {{ old('icone', isset($servico) && $servico->icone ==='twf-cleaning-3' ? 'selected' : '') }}>
                                 Ícone 3
                             </option>
                         </select>
