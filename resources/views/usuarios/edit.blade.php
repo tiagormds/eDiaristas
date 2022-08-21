@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <form action="{{ route('servicos.update', $servico->id) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('servico.update', $servico->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 

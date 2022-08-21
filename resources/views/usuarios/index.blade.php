@@ -3,7 +3,7 @@
 @section('title', 'Lista de Serviços')
 
 @section('content_header')
-    <h1>Lista de Serviços</h1>
+    <h1>Lista de Usuários</h1>
 @stop
 
 @section('content')
@@ -24,12 +24,13 @@
         </tr>
         </thead>
         <tbody>
-        @forelse($servicos as $servico)
+        @forelse($usuarios as $usuario)
             <tr>
-                <th scope="row">{{ $servico->id }}</th>
-                <td>{{ $servico->nome }}</td>
+                <th scope="row">{{ $usuario->id }}</th>
+                <td>{{ $usuario->name }}</td>
                 <td>
-                    <a class="btn btn-primary" href="{{ route('servicos.edit', $servico->id) }}">Atualizar dados do serviço</a>
+                    <a class="btn btn-primary" href="{{ route('usuarios.edit', $usuario->id) }}">Atualizar dados do serviço</a>
+                    <a class="btn btn-danger" href="{{ route('usuarios.destroy', $usuario->id) }}">Apagar Usuário</a>
                 </td>
             </tr>
         @empty
@@ -42,7 +43,7 @@
         </tbody>
     </table>
     <div class="d-flex justify-content-center">
-        {{ $servicos->links() }}
+        {{ $usuarios->links() }}
     </div>
 
 {{--    <div class="float-right">--}}

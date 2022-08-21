@@ -280,6 +280,23 @@ return [
                 ],
             ],
         ],
+
+        [
+            'text'    => 'Usuários',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text' => 'Novo usuário',
+                    'icon'    => 'fas fa-fw fa-user',
+                    'route'  => 'usuarios.create',
+                ],
+                [
+                    'text' => 'Lista de usuários',
+                    'icon'    => 'fas fa-fw fa-users',
+                    'route'  => 'usuarios.index',
+                ],
+            ],
+        ],
     ],
 
     /*
