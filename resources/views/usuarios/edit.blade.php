@@ -7,12 +7,12 @@
 @stop
 
 @section('content')
-    <form action="{{ route('servico.update', $servico->id) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('usuarios.update', $usuario->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
-        @include('servicos._form')
+        @include('usuarios._form')
 
-        <button class="btn btn-primary">Salvar</button>
+        <button class="btn btn-primary">Atualizar</button>
     </form>
 @stop

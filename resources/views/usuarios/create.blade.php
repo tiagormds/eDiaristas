@@ -10,9 +10,7 @@
     <form action="{{ route('usuarios.store') }}" method="post" enctype="multipart/form-data">
         @csrf
 
-        Formulário de novo usuário
-
-{{--        @include('servicos._form')--}}
+        @include('usuarios._form')
 
         <button class="btn btn-primary">Salvar</button>
     </form>

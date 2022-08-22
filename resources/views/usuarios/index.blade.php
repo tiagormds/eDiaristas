@@ -29,7 +29,7 @@
                 <th scope="row">{{ $usuario->id }}</th>
                 <td>{{ $usuario->name }}</td>
                 <td>
-                    <a class="btn btn-primary" href="{{ route('usuarios.edit', $usuario->id) }}">Atualizar dados do serviço</a>
+                    <a class="btn btn-primary" href="{{ route('usuarios.edit', $usuario->id) }}">Atualizar Dados</a>
                     <a class="btn btn-danger" href="{{ route('usuarios.destroy', $usuario->id) }}">Apagar Usuário</a>
                 </td>
             </tr>
