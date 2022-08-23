@@ -8,18 +8,14 @@
 
 @section('content')
 
-    @if(session('mensagem'))
-        <div class="alert alert-default-success">
-            {{ session('mensagem') }}
-        </div>
-    @endif
-
+    @include('_mensagens_sessao')
 
     <table class="table">
         <thead>
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
             <th scope="col">Ações</th>
         </tr>
         </thead>
@@ -28,9 +24,14 @@
             <tr>
                 <th scope="row">{{ $usuario->id }}</th>
                 <td>{{ $usuario->name }}</td>
+                <td>{{ $usuario->email }}</td>
                 <td>
-                    <a class="btn btn-primary" href="{{ route('usuarios.edit', $usuario->id) }}">Atualizar Dados</a>
-                    <a class="btn btn-danger" href="{{ route('usuarios.destroy', $usuario->id) }}">Apagar Usuário</a>
+                    <form action="{{ route('usuarios.destroy', $usuario->id) }}" method="post">
+                        @method('DELETE')
+                        @csrf
+                        <a class="btn btn-primary" href="{{ route('usuarios.edit', $usuario->id) }}">Atualizar Dados</a>
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja apagar?')">Apagar Usuário</button>
+                    </form>
                 </td>
             </tr>
         @empty

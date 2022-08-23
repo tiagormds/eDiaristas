@@ -42,10 +42,8 @@ class ServicoController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(int $id)
+    public function edit(Servico $servico)
     {
-        $servico = Servico::find($id);
-
         return view('servicos.edit', compact('servico'));
     }
 
@@ -54,11 +52,10 @@ class ServicoController extends Controller
      * @param ServicoRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(int $id, ServicoRequest $request)
+    public function update(Servico $servico, ServicoRequest $request)
     {
         $dados = $request->all();
 
-        $servico = Servico::findOrFail($id);
         $servico->update($dados);
         return redirect()->route('servicos.index')->with('mensagem', 'O serviço foi atualizado com sucesso!');
     }

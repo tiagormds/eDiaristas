@@ -10,10 +10,9 @@ use function GuzzleHttp\Promise\all;
 
 class UsuarioController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
@@ -22,84 +21,76 @@ class UsuarioController extends Controller
         return view('usuarios.index', compact('usuarios'));
     }
 
+
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
         return view('usuarios.create');
     }
 
+
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param UsuarioRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(UsuarioRequest $request)
     {
         User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+                         'name' => $request->name,
+                         'email' => $request->email,
+                         'password' => Hash::make($request->password),
+                     ]);
 
         return redirect()->route('usuarios.index')->with('mensagem', 'Usuário Cadastrado com Sucesso!');
     }
 
+
     /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param User $usuario
+     * @return void
      */
-    public function show($id)
+    public function show(User $usuario)
     {
         //
     }
 
+
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param User $usuario
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(int $id)
+    public function edit(User $usuario)
     {
-        $usuario = User::findOrFail($id);
         return view('usuarios.edit', compact('usuario'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UsuarioRequest $request, int $id)
-    {
-        $usuario = User::findOrFail($id);
 
+    /**
+     * @param User $usuario
+     * @param UsuarioRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(User $usuario, UsuarioRequest $request)
+    {
         $usuario->update([
-          'name' => $request->name,
-          'email' => $request->email,
-          'password' => Hash::make($request->password),
-        ]);
+                             'name' => $request->name,
+                             'email' => $request->email,
+                             'password' => Hash::make($request->password),
+                         ]);
 
         return redirect()->route('usuarios.index')->with('mensagem', 'Dados Atualizados!');
     }
 
+
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param User $usuario
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(User $usuario)
     {
-        //
+        $usuario->delete();
+        return redirect()->route('usuarios.index')->with('mensagem', 'Usuário apagado!');
     }
 }
